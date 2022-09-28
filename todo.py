@@ -1,12 +1,12 @@
 #app.py
 
 from flask import Flask, render_template, request
-app = Flask(__name__)
+app = Flask(__name__, static_folder='staticFiles')
 
 todoList = []
 
 @app.route("/")
-def hello():
+def home():
     return render_template('home.html')
 
 @app.route('/addTodo', methods=['POST'])
